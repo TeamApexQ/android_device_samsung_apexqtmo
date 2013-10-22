@@ -3,3 +3,4 @@ delete("/system/app/CMAccount.apk");
 delete("/system/app/CMUpdater.apk");
 delete("/system/lib/hw/power.msm8960.so");
 delete("/system/lib/hw/power.default.so");
+delete("/system/bin/mpdecision");
