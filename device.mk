@@ -42,6 +42,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     50bluetooth \
     60compass \
+    70tether \
     wifimac.sh \
     camera.MSM8960
 
