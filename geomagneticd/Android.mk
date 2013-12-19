@@ -27,5 +27,6 @@ LOCAL_PRELINK_MODULE := false
 
 LOCAL_MODULE := geomagneticd
 LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT)/bin
 
 include $(BUILD_EXECUTABLE)
