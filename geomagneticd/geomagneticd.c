@@ -94,14 +94,14 @@ int sysfs_path_prefix(char *name, char *path_prefix)
 	char path[PATH_MAX];
 	char *c;
 	int fd;
-
+ALOGD("sysfs_path_prefix 1");
 	if (name == NULL || path_prefix == NULL)
 		return -EINVAL;
-
+ALOGD("sysfs_path_prefix 2");
 	d = opendir("/sys/class/input");
 	if (d == NULL)
 		return -1;
-
+ALOGD("sysfs_path_prefix 3");
 	while ((di = readdir(d))) {
 		if (di == NULL || strcmp(di->d_name, ".") == 0 || strcmp(di->d_name, "..") == 0)
 			continue;
@@ -118,13 +118,13 @@ int sysfs_path_prefix(char *name, char *path_prefix)
 		c = strstr((char *) &input_name, "\n");
 		if (c != NULL)
 			*c = '\0';
-
+ALOGD("sysfs_path_prefix d_name:%s, input_name:%s",di->d_name,input_name);
 		if (strcmp(input_name, name) == 0) {
 			snprintf(path_prefix, PATH_MAX, "/sys/class/input/%s", di->d_name);
 			return 0;
 		}
 	}
-
+ALOGD("sysfs_path_prefix 4");
 	return -1;
 }
 
