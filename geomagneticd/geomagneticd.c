@@ -254,7 +254,7 @@ int main(int argc, char *argv[])
 	 * Without that, the hard coeff are reported to be around 127.
 	 */
 
-	LOGD("Geomagneticd start");
+	ALOGD("Geomagneticd start");
 
 	input_fd = input_open("geomagnetic_raw");
 	if (input_fd < 0)
@@ -272,11 +272,11 @@ int main(int argc, char *argv[])
 		calib_offset[i] = 0;
 	}
 
-	LOGD("Reading config");
+	ALOGD("Reading config");
 
 	rc = yas_cfg_read(&hard_offset, &calib_offset, &accuracy);
 	if (rc == 0) {
-		LOGD("Setting initial offsets: %d %d %d, %d %d %d", hard_offset[0], hard_offset[1], hard_offset[2], calib_offset[0], calib_offset[1], calib_offset[2]);
+		ALOGD("Setting initial offsets: %d %d %d, %d %d %d", hard_offset[0], hard_offset[1], hard_offset[2], calib_offset[0], calib_offset[1], calib_offset[2]);
 
 		offset_write(path_offset, &hard_offset, &calib_offset, accuracy);
 
@@ -287,7 +287,7 @@ int main(int argc, char *argv[])
 		}
 	} else {
 		offset_read(path_offset, &hard_offset, &calib_offset, &accuracy);
-		LOGD("Reading initial offsets: %d %d %d", hard_offset[0], hard_offset[1], hard_offset[2]);
+		ALOGD("Reading initial offsets: %d %d %d", hard_offset[0], hard_offset[1], hard_offset[2]);
 
 		for (i=0 ; i < 3 ; i++) {
 			axis_min[i] = 0;
