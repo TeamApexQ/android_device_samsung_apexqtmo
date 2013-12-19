@@ -325,7 +325,7 @@ loop:
 				offset_read(path_offset, &hard_offset, &calib_offset, &accuracy);
 
 				if (hard_offset[0] != 127 || hard_offset[1] != 127 || hard_offset[2] != 127) {
-					LOGD("Reading offsets: %d %d %d", hard_offset[0], hard_offset[1], hard_offset[2]);
+					ALOGD("Reading offsets: %d %d %d", hard_offset[0], hard_offset[1], hard_offset[2]);
 					yas_cfg_write(&hard_offset, &calib_offset, accuracy);
 				}
 			}
