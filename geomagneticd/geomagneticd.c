@@ -208,7 +208,7 @@ int yas_cfg_write(int *hard_offset, int *calib_offset, int accuracy)
 	int fd;
 	int rc;
 
-	fd = open("/data/system/yas-backup.cfg", O_WRONLY | O_TRUNC | O_CREAT, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+	fd = open("/data/system/yas-backup.cfg", O_WRONLY | O_TRUNC | O_CREAT, 0644);
 	if (fd < 0)
 		return -1;
 
