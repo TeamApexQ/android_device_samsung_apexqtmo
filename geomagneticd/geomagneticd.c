@@ -259,11 +259,11 @@ int main(int argc, char *argv[])
 	input_fd = input_open("geomagnetic_raw");
 	if (input_fd < 0)
 		goto sleep_loop;
-
+ALOGD("geomagneticd opened input fd");
 	rc = sysfs_path_prefix("geomagnetic_raw", &path);
 	if (rc < 0)
 		goto sleep_loop;
-
+ALOGD("geomagneticd opened sysfs");
 	snprintf(path_offset, PATH_MAX, "%s/offsets", path);
 
 	for (i=0 ; i < 3 ; i++) {
