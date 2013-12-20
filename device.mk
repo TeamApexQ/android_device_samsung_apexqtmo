@@ -36,7 +36,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.mode=none \
     persist.audio.handset.mic=analog \
-    ro.qc.sdk.audio.fluencetype=none
+    ro.qc.sdk.audio.fluencetype=none \
+    dalvik.vm.dexopt-data-only=0
 
 # Apexq scripts
 PRODUCT_PACKAGES += \
