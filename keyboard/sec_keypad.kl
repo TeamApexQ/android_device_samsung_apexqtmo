@@ -78,7 +78,7 @@ key 115   VOLUME_UP         WAKE_DROPPED
 key 114   VOLUME_DOWN       WAKE_DROPPED
 
 # Problem Children
-key 155  ENVELOPE           WAKE_DROPPED
-key 429  CONTACTS           WAKE_DROPPED
-key 217  SEARCH             WAKE_DROPPED
+key 155  CTRL_LEFT           WAKE_DROPPED
+key 429  SEARCH           WAKE_DROPPED
+key 217  ALT_RIGHT             WAKE_DROPPED
 

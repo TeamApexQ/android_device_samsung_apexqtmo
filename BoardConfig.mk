@@ -27,53 +27,59 @@
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := apexqtmo
+TARGET_BOARD_INFO_FILE ?= device/samsung/apexqtmo/board-info.txt
 
 # Insert contents of file near end of updater-script
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./build/tools/releasetools/ota_from_target_files -e ./device/samsung/apexqtmo/installer_extra
 
 # Kernel
 TARGET_KERNEL_CONFIG        := cyanogen_apexq_defconfig
+TARGET_KERNEL_VARIANT_CONFIG :=
 BOARD_MKBOOTIMG_ARGS        := --ramdisk_offset 0x01500000
 TARGET_KERNEL_SOURCE        := kernel/samsung/d2
 
 # Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/apexqtmo/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF :=
+BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY :=
+BOARD_HAVE_BLUETOOTH_BCM :=
 BOARD_HAVE_BLUETOOTH_QCOM := true
+#QCOM_BT_USE_SMD_TTY := true
 BLUETOOTH_HCI_USE_MCT := true
+
 
 # Wifi
 BOARD_WLAN_DEVICE := qcwcn
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
+BOARD_HAVE_SAMSUNG_WIFI :=
 BOARD_HAS_QCOM_WLAN := true
+BOARD_HAS_QCOM_WLAN_SDK := true
 
 WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/prima_wlan.ko"
 WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/prima_wlan/parameters/fwpath"
 WIFI_DRIVER_MODULE_NAME     := "prima_wlan"
-
-#Audio
-BOARD_USES_SEPERATED_VOICE_SPEAKER := true
-BOARD_USES_FLUENCE_INCALL := false
-
-#camera hax
-COMMON_GLOBAL_CFLAGS += -DCONFIG_MSM8960_NO_CANCEL_AUTOFOCUS
-
-# undefined
 WIFI_DRIVER_MODULE_ARG      :=
 WIFI_DRIVER_MODULE_AP_ARG   :=
-WIFI_DRIVER_FW_PATH_STA     :=
-WIFI_DRIVER_FW_PATH_AP      :=
+WIFI_DRIVER_FW_PATH_STA     := "sta"
+WIFI_DRIVER_FW_PATH_AP      := "ap"
 WIFI_DRIVER_FW_PATH_P2P     :=
-BOARD_HAVE_SAMSUNG_WIFI :=
-BOARD_HAVE_BLUETOOTH_BCM :=
-BOARD_HAVE_AUDIENCE_A2220 :=
-TARGET_KERNEL_VARIANT_CONFIG :=
 
-ifeq ($(VARIENT_REQUIRE_3.0_KERNEL),true)
-## 3.0 kernel defines
-# Workaround for missing symbols in camera
-BOARD_NEEDS_MEMORYHEAPPMEM := true
-# We still have the old ION API
-BOARD_HAVE_OLD_ION_API := true
-# Use regular media driver variant for 8960
-TARGET_QCOM_MEDIA_VARIANT :=
-endif
+#Audio
+BOARD_HAVE_AUDIENCE_A2220 :=
+BOARD_USES_SEPERATED_VOICE_SPEAKER := true
+BOARD_USES_FLUENCE_INCALL := false
+BOARD_USES_FLUENCE_FOR_VOIP := false
+
+#camera hax
+TARGET_PROVIDES_CAMERA_HAL := true
+COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
+TARGET_NEED_QCOM_HARDWARE := true
+TARGET_NEED_DISABLE_FACE_DETECTION := true
+TARGET_NEED_DISABLE_FACE_DETECTION_BOTH_CAMERAS := true
+TARGET_NEED_PREVIEW_SIZE_FIXUP := true
+TARGET_NEED_DISABLE_AUTOFOCUS := true
+
+#adreno hacks
+TARGET_NO_ADAPTIVE_PLAYBACK := true
