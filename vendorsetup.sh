@@ -1,3 +1,5 @@
+add_lunch_combo full_apexqtmo-user
+add_lunch_combo full_apexqtmo-userdebug
 add_lunch_combo full_apexqtmo-eng
 add_lunch_combo cm_apexqtmo-eng
 
