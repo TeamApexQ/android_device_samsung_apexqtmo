@@ -26,6 +26,15 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from apexqtmo device
 $(call inherit-product, device/samsung/apexqtmo/device.mk)
 
+$(call inherit-product, vendor/omni/config/gsm.mk)
+$(call inherit-product, vendor/omni/config/common.mk)
+
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=apexqtmo TARGET_DEVICE=apexqtmo BUILD_FINGERPRINT="samsung/apexqtmo/apexqtmo:4.4.2/KOT49H/T699UVBMC5:user/release-keys" PRIVATE_BUILD_DESC="apexqtmo-user 4.4.2 KOT49H T699UVBMC5 release-keys"
+
+
+PRODUCT_NAME := full_apexqtmo
+PRODUCT_DEVICE := apexqtmo
+
 # Set those variables here to overwrite the inherited values.
 PRODUCT_NAME := full_apexqtmo
 PRODUCT_DEVICE := apexqtmo
