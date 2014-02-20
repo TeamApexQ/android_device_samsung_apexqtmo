@@ -57,15 +57,5 @@ PRODUCT_PACKAGES += \
     WCNSS_qcom_cfg.ini \
     WCNSS_qcom_wlan_nv.bin_
 
-# OpenSSH
-PRODUCT_PACKAGES += \
-	ssh \
-	sftp \
-	scp \
-	sshd \
-	ssh-keygen \
-	sshd_config \
-	start-ssh
-
 # Inherit from d2-common
 $(call inherit-product, device/samsung/d2-common/d2-common.mk)
