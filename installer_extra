@@ -6,6 +6,8 @@ delete("/system/lib/hw/power.msm8960.so");
 delete("/system/lib/hw/power.default.so");
 delete("/system/bin/mpdecision");
 delete("/system/media/bootanimation.zip");
+run_program("/sbin/sh", "-c", "busybox cp -R /system/blobs/gsm/* /system/"));
+run_program("/sbin/sh", "-c", "busybox rm -rf /system/blobs"));
 run_program("/sbin/busybox", "mv", "/system/media/bootani.zip", "/system/media/bootanimation.zip");
 mount("ext4", "EMMC", "/dev/block/mmcblk0p15", "/data");
 delete("/data/system/wpa_supplicant");
