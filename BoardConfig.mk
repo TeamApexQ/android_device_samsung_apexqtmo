@@ -84,6 +84,7 @@ TARGET_NEED_DISABLE_AUTOFOCUS := true
 
 #embedded superuser
 SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
 #adreno hacks
 TARGET_NO_ADAPTIVE_PLAYBACK := true
