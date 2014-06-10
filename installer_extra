@@ -8,4 +8,5 @@ run_program("/sbin/sh", "-c", "busybox rm -rf /system/blobs");
 run_program("/sbin/busybox", "mv", "/system/media/bootani.zip", "/system/media/bootanimation.zip");
 mount("ext4", "EMMC", "/dev/block/mmcblk0p15", "/data");
 delete("/data/system/wpa_supplicant");
+run_program("/sbin/sh", "-c", "busybox rm -rf /data/dalvik-cache");
 unmount("/data");
