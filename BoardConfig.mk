@@ -90,3 +90,6 @@ SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 TARGET_NO_ADAPTIVE_PLAYBACK := true
 
 DEVICE_RESOLUTION := 480x800
+
+#Audio modes
+USE_TUNNEL_MODE := true

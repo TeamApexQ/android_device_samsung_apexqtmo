@@ -4,3 +4,4 @@ rild.libargs=-d /dev/smd0
 ro.telephony.default_network=3
 
 ro.qualcomm.bt.hci_transport=smd
+tunnel.decode=true
