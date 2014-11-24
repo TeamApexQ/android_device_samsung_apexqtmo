@@ -94,7 +94,7 @@ TW_INTERNAL_STORAGE_PATH := "/data/media"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
-TW_INCLUDE_JB_CRYPTO := true
+TW_INCLUDE_L_CRYPTO := true
 PRODUCT_COPY_FILES += \
     device/samsung/d2-common/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
 
