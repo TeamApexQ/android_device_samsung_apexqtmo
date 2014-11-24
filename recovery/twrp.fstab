@@ -1,0 +1,10 @@
+#TWRP fstab for d2 and compatibles
+#By mdmallardi@gmail.com -- 2014-03-02
+#<mntpoint>	<type>	<src>		<src2>				<flags>
+/boot		emmc	/dev/block/platform/msm_sdcc.1/by-name/boot
+/recovery	emmc	/dev/block/platform/msm_sdcc.1/by-name/recovery
+/system		ext4	/dev/block/platform/msm_sdcc.1/by-name/system
+/cache		ext4	/dev/block/platform/msm_sdcc.1/by-name/cache
+/data		ext4	/dev/block/platform/msm_sdcc.1/by-name/userdata	flags=length=-16384
+/external_sd	auto	/dev/block/mmcblk1p1	/dev/block/mmcblk1	flags=display="External SD Card";storage;wipeingui;removable
+/usb-otg	auto	/dev/block/sda1		/dev/block/sda		flags=display="USB Storage";storage;wipeingui;removable

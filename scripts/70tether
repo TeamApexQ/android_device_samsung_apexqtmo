@@ -1,0 +1,6 @@
+#!/system/bin/sh
+
+echo "INSERT INTO global (name, value) VALUES ('tether_dun_required',0);" | sqlite3 /data/data/com.android.providers.settings/databases/settings.db
+echo "1" > /dev/cpuctl/apps/notify_on_release
+echo "1" > /dev/cpuctl/apps/cpu.notify_on_migrate
+
