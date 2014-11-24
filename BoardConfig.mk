@@ -1,4 +1,4 @@
-# Copyright (C) 2009 The CyanogenMod Project
+# Copyright (C) 2014
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,35 +23,30 @@
 # inherit from the proprietary version
 -include vendor/samsung/apexqtmo/BoardConfigVendor.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/d2-common/include
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/apexqtmo/include
 
 # Kernel
+TARGET_KERNEL_CONFIG        := cyanogen_apexq_defconfig
+BOARD_MKBOOTIMG_ARGS        := --ramdisk_offset 0x01500000
 TARGET_KERNEL_SOURCE        := kernel/samsung/d2
 BOARD_KERNEL_CMDLINE        := androidboot.hardware=qcom androidboot.selinux=permissive user_debug=31 zcache
 BOARD_KERNEL_BASE           := 0x80200000
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01300000
 BOARD_KERNEL_PAGESIZE       := 2048
-TARGET_KERNEL_VARIANT_CONFIG := cyanogen_d2_defconfig
 TARGET_KERNEL_SELINUX_CONFIG := m2selinux_defconfig
-
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
 
-# WiFi module
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/dhd.ko"
-WIFI_DRIVER_MODULE_NAME := "dhd"
-
 # Adreno configuration
-BOARD_EGL_CFG := device/samsung/d2-common/configs/egl.cfg
+BOARD_EGL_CFG := device/samsung/apexqtmo/configs/egl.cfg
 
 # Recovery
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/d2-common/recovery/recovery_keys.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/apexqtmo/recovery/recovery_keys.c
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 BOARD_USES_MMCUTILS := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
-TARGET_RECOVERY_FSTAB := device/samsung/d2-common/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/samsung/apexqtmo/rootdir/etc/fstab.qcom
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
@@ -96,7 +91,7 @@ TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_INCLUDE_L_CRYPTO := true
 PRODUCT_COPY_FILES += \
-    device/samsung/d2-common/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
+    device/samsung/apexqtmo/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # inherit from common msm8960-common
 -include device/samsung/msm8960-common/BoardConfigCommon.mk
@@ -107,12 +102,6 @@ TARGET_BOARD_INFO_FILE ?= device/samsung/apexqtmo/board-info.txt
 
 # Insert contents of file near end of updater-script
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./build/tools/releasetools/ota_from_target_files -e ./device/samsung/apexqtmo/installer_extra
-
-# Kernel
-TARGET_KERNEL_CONFIG        := cyanogen_apexq_defconfig
-TARGET_KERNEL_VARIANT_CONFIG :=
-BOARD_MKBOOTIMG_ARGS        := --ramdisk_offset 0x01500000
-TARGET_KERNEL_SOURCE        := kernel/samsung/d2
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/apexqtmo/bluetooth
