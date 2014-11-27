@@ -83,6 +83,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Separate audio devices for VOIP
 BOARD_USES_SEPERATED_VOIP := true
+QCOM_ANC_HEADSET_ENABLED := false
 
 # TWRP
 RECOVERY_SDCARD_ON_DATA := true
