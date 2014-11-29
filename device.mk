@@ -44,6 +44,7 @@ PRODUCT_PACKAGES += \
     60compass \
     70tether \
     wifimac.sh \
+    camera.MSM8960 \
     geomagneticd
 
 # General insanity
