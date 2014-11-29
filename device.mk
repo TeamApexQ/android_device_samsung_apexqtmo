@@ -119,11 +119,9 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc
 
 # GPS
-#PRODUCT_PACKAGES += \
-#    gps.msm8960
-
-#PRODUCT_COPY_FILES += \
-#    device/samsung/apexqtmo/gps/gps.conf:system/etc/gps.conf
+PRODUCT_PACKAGES += \
+    gps.msm8960 \
+    gps.conf
 
 # Torch
 PRODUCT_PACKAGES += OmniTorch
