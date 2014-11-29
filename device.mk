@@ -40,7 +40,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Apexq scripts
 PRODUCT_PACKAGES += \
-    50bluetooth \
+    80datanetworks \
     60compass \
     70tether \
     wifimac.sh \
@@ -121,7 +121,10 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8960 \
-    gps.conf
+    gps.conf \
+    libgps.utils \
+    libloc_core \
+    libloc_eng
 
 # Torch
 PRODUCT_PACKAGES += OmniTorch
