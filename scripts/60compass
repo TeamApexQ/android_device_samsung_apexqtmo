@@ -38,6 +38,6 @@ chmod 666 /sys/class/input/input9/static_matrix
 echo 0 > /sys/class/input/input9/ellipsoid_mode 0
 echo "10319 -477 45 -147 9510 171 -170 52 10187" > /sys/class/input/input9/static_matrix
 
-start geomagneticd
+/system/bin/geomagneticd &
 
 
