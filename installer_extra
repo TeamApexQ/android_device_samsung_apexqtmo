@@ -5,6 +5,7 @@ delete("/system/bin/mpdecision");
 delete("/system/media/bootanimation.zip");
 run_program("/sbin/sh", "-c", "busybox cp -R /system/blobs/gsm/* /system/");
 run_program("/sbin/sh", "-c", "busybox rm -rf /system/blobs");
+run_program("/sbin/sh", "-c", "busybox chmod 755 /system/etc/init.d/*");
 run_program("/sbin/busybox", "mv", "/system/media/bootani.zip", "/system/media/bootanimation.zip");
 mount("ext4", "EMMC", "/dev/block/mmcblk0p15", "/data");
 delete("/data/system/wpa_supplicant");
