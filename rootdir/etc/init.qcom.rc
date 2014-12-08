@@ -201,7 +201,7 @@ on boot
     start qcamerasvr
 
     # enable pulsing led on boot
-    write /sys/class/sec/led/led_pattern 6
+    #write /sys/class/sec/led/led_pattern 6
 
 on fs
     mount_all fstab.qcom

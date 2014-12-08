@@ -1,0 +1,8 @@
+#!/system/bin/sh
+
+echo "1" > /dev/wcnss_wlan
+echo "1" > /sys/module/wcnss_ssr_8960/parameters/enable_riva
+echo "`getprop ro.serialno`" > /sys/devices/platform/wcnss_wlan.0/serial_number
+/system/bin/btnvtool -O
+chown bluetooth.bluetooth /efs/bluetooth/bt_addr
+/system/bin/netmgrd &

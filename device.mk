@@ -40,10 +40,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Apexq scripts
 PRODUCT_PACKAGES += \
-    50bluetooth \
+    80datanetworks \
     60compass \
     70tether \
     wifimac.sh \
+    camera.MSM8960 \
     geomagneticd
 #    camera.MSM8960 \
 
@@ -120,11 +121,9 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc
 
 # GPS
-#PRODUCT_PACKAGES += \
-#    gps.msm8960
-
-#PRODUCT_COPY_FILES += \
-#    device/samsung/apexqtmo/gps/gps.conf:system/etc/gps.conf
+PRODUCT_PACKAGES += \
+    gps.msm8960 \
+    gps.conf
 
 # Torch
 PRODUCT_PACKAGES += OmniTorch
