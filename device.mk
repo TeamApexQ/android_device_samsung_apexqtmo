@@ -123,7 +123,10 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8960 \
-    gps.conf
+    gps.conf \
+    libgps.utils \
+    libloc_core \
+    libloc_eng
 
 # Torch
 PRODUCT_PACKAGES += OmniTorch
