@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <bool name="def_nofitications_use_ring_volume">false</bool>
+    <bool name="def_notifications_use_ring_volume">false</bool>
     <bool name="def_lock_screen_allow_private_notifications">false</bool>
 </resources>
 
