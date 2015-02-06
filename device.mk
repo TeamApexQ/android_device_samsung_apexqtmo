@@ -129,9 +129,6 @@ PRODUCT_PACKAGES += \
     gps.msm8960 \
     gps.conf
 
-# Torch
-PRODUCT_PACKAGES += OmniTorch
-
 # Wifi
 PRODUCT_PACKAGES += \
     libnetcmdiface \
