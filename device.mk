@@ -121,6 +121,9 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
+# LowMem
+PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true
+
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8960 \
