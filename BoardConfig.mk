@@ -99,6 +99,7 @@ TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 TW_INCLUDE_L_CRYPTO := true
+TW_THEME := portrait_mdpi
 PRODUCT_COPY_FILES += \
     device/samsung/apexqtmo/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
 
